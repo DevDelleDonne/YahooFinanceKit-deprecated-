@@ -69,12 +69,12 @@ public struct Quote: Codable, Identifiable, Hashable {
     public let trailingAnnualDividentYeld: Double?
     public let epsTrailingTwelveMonths: Double?
     
-    public init(currency: String?, marketState: String?, fullExchangeName: String?, displayName: String?, symbol: String?, regularMarketPrice: Double?, regularMarketChange: Double?, regularMarketChangePercent: Double?, postMarketPrice: Double?, postMarketPriceChange: Double?, regularMarketOpen: Double?, regularMarhetDayHigh: Double?, regularMarketDayLow: Double?, regularMarketVolume: Double, trailingPE: Double?, marketCap: Double?, fiftyTwoWeekLow: Double?, fiftyTwoWeekHigh: Double?, averageDailyVolume3Month: Double?, trailingAnnualDividentYeld: Double?, epsTrailingTwelveMonths: Double?) {
+    public init(symbol: String, currency: String?, marketState: String?, fullExchangeName: String?, displayName: String?, regularMarketPrice: Double?, regularMarketChange: Double?, regularMarketChangePercent: Double?, postMarketPrice: Double?, postMarketPriceChange: Double?, regularMarketOpen: Double?, regularMarhetDayHigh: Double?, regularMarketDayLow: Double?, regularMarketVolume: Double, trailingPE: Double?, marketCap: Double?, fiftyTwoWeekLow: Double?, fiftyTwoWeekHigh: Double?, averageDailyVolume3Month: Double?, trailingAnnualDividentYeld: Double?, epsTrailingTwelveMonths: Double?) {
+        self.symbol = symbol
         self.currency = currency
         self.marketState = marketState
         self.fullExchangeName = fullExchangeName
         self.displayName = displayName
-        self.symbol = symbol
         self.regularMarketPrice = regularMarketPrice
         self.regularMarketChange = regularMarketChange
         self.regularMarketChangePercent = regularMarketChangePercent
