@@ -1,3 +1,3 @@
-# StocksAPI
+# YahooFinanceAPI
 
-A description of this package.
+Yahoo Finance API for swift
