@@ -38,7 +38,7 @@ public struct QuoteResponse: Decodable {
     }
 }
 
-public struct Quote: Codable, Identifiable, Hashable {
+public struct Quote: Codable, Identifiable, Hashable, Equatable {
     
     public let id = UUID()
     
@@ -58,7 +58,7 @@ public struct Quote: Codable, Identifiable, Hashable {
     public let regularMarhetDayHigh: Double?
     public let regularMarketDayLow: Double?
     
-    public let regularMarketVolume: Double
+    public let regularMarketVolume: Double?
     public let trailingPE: Double?
     public let marketCap: Double?
     
@@ -69,7 +69,7 @@ public struct Quote: Codable, Identifiable, Hashable {
     public let trailingAnnualDividentYeld: Double?
     public let epsTrailingTwelveMonths: Double?
     
-    public init(symbol: String, currency: String?, marketState: String?, fullExchangeName: String?, displayName: String?, regularMarketPrice: Double?, regularMarketChange: Double?, regularMarketChangePercent: Double?, postMarketPrice: Double?, postMarketPriceChange: Double?, regularMarketOpen: Double?, regularMarhetDayHigh: Double?, regularMarketDayLow: Double?, regularMarketVolume: Double, trailingPE: Double?, marketCap: Double?, fiftyTwoWeekLow: Double?, fiftyTwoWeekHigh: Double?, averageDailyVolume3Month: Double?, trailingAnnualDividentYeld: Double?, epsTrailingTwelveMonths: Double?) {
+    public init(symbol: String, currency: String? = nil, marketState: String? = nil, fullExchangeName: String? = nil, displayName: String? = nil, regularMarketPrice: Double? = nil, regularMarketChange: Double? = nil, regularMarketChangePercent: Double? = nil, postMarketPrice: Double? = nil, postMarketPriceChange: Double? = nil, regularMarketOpen: Double? = nil, regularMarhetDayHigh: Double? = nil, regularMarketDayLow: Double? = nil, regularMarketVolume: Double? = nil, trailingPE: Double? = nil, marketCap: Double? = nil, fiftyTwoWeekLow: Double? = nil, fiftyTwoWeekHigh: Double? = nil, averageDailyVolume3Month: Double? = nil, trailingAnnualDividentYeld: Double? = nil, epsTrailingTwelveMonths: Double? = nil) {
         self.symbol = symbol
         self.currency = currency
         self.marketState = marketState
