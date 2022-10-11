@@ -18,7 +18,7 @@ struct StocksAPIExec {
 //            let quotes = try await stocksAPI.fetchQuotes(symbols: "APPL,MSFT,GOOG,TSLA")
 //            print(quotes)
             
-            let tickers = try await stocksAPI.searchTickers(query: "tesla")
+            let tickers = try await stocksAPI.searchTickers(query: "BTC-USD")
             print(tickers)
 //            if let chart = try await stocksAPI.fetchChartData(symbol: "AAPL", range: .oneDay) {
 //                print(chart)

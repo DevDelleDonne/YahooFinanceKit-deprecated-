@@ -55,11 +55,9 @@ public struct StocksAPI: IStocksAPI {
                 throw APIError.httpStatusCodeFailed(statusCode: statusCode, error: error)
             }
             let data = resp.data ?? []
-            if isEquityTypeOnly {
-                return data.filter { ($0.quoteType ?? "").localizedCaseInsensitiveCompare("equity") == .orderedSame }
-            } else {
+            
                 return data
-            }
+            
         }
         
         public func searchTickersRawData(query: String, isEquityTypeOnly: Bool) async throws -> (Data, URLResponse) {
