@@ -51,8 +51,8 @@ public struct Quote: Codable, Identifiable, Hashable, Equatable {
     public let regularMarketChange: Double?
     public let regularMarketChangePercent: Double?
     
-    public let postMarketPrice: Double?
-    public let postMarketPriceChange: Double?
+    public let preMarketPrice: Double?
+    public let preMarketChange: Double?
     
     public let regularMarketOpen: Double?
     public let regularMarhetDayHigh: Double?
@@ -70,7 +70,7 @@ public struct Quote: Codable, Identifiable, Hashable, Equatable {
     public let trailingAnnualDividentYeld: Double?
     public let epsTrailingTwelveMonths: Double?
     
-    public init(symbol: String, currency: String? = nil, marketState: String? = nil, fullExchangeName: String? = nil, displayName: String? = nil, regularMarketPrice: Double? = nil, regularMarketChange: Double? = nil, regularMarketChangePercent: Double? = nil, postMarketPrice: Double? = nil, postMarketPriceChange: Double? = nil, regularMarketOpen: Double? = nil, regularMarhetDayHigh: Double? = nil, regularMarketDayLow: Double? = nil, regularMarketPreviousClose: Double? = nil, regularMarketVolume: Double? = nil, trailingPE: Double? = nil, marketCap: Double? = nil, fiftyTwoWeekLow: Double? = nil, fiftyTwoWeekHigh: Double? = nil, averageDailyVolume3Month: Double? = nil, trailingAnnualDividentYeld: Double? = nil, epsTrailingTwelveMonths: Double? = nil) {
+    public init(symbol: String, currency: String? = nil, marketState: String? = nil, fullExchangeName: String? = nil, displayName: String? = nil, regularMarketPrice: Double? = nil, regularMarketChange: Double? = nil, regularMarketChangePercent: Double? = nil, preMarketPrice: Double? = nil, preMarketChange: Double? = nil, regularMarketOpen: Double? = nil, regularMarhetDayHigh: Double? = nil, regularMarketDayLow: Double? = nil, regularMarketPreviousClose: Double? = nil, regularMarketVolume: Double? = nil, trailingPE: Double? = nil, marketCap: Double? = nil, fiftyTwoWeekLow: Double? = nil, fiftyTwoWeekHigh: Double? = nil, averageDailyVolume3Month: Double? = nil, trailingAnnualDividentYeld: Double? = nil, epsTrailingTwelveMonths: Double? = nil) {
         self.symbol = symbol
         self.currency = currency
         self.marketState = marketState
@@ -79,8 +79,8 @@ public struct Quote: Codable, Identifiable, Hashable, Equatable {
         self.regularMarketPrice = regularMarketPrice
         self.regularMarketChange = regularMarketChange
         self.regularMarketChangePercent = regularMarketChangePercent
-        self.postMarketPrice = postMarketPrice
-        self.postMarketPriceChange = postMarketPriceChange
+        self.preMarketPrice = preMarketPrice
+        self.preMarketChange = preMarketChange
         self.regularMarketOpen = regularMarketOpen
         self.regularMarhetDayHigh = regularMarhetDayHigh
         self.regularMarketDayLow = regularMarketDayLow
