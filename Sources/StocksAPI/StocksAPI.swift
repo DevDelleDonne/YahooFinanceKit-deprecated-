@@ -9,7 +9,7 @@ public protocol IStocksAPI {
     func fetchQuotesRawData(symbols: String) async throws -> (Data, URLResponse)
 }
 
-public struct StocksAPI: IStocksAPI {
+public struct KISStocksAPI: IStocksAPI {
     private let session = URLSession.shared
         private let jsonDecoder = {
             let decoder = JSONDecoder()
