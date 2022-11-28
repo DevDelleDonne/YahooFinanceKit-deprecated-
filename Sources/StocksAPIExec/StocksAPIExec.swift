@@ -11,7 +11,7 @@ import StocksAPI
 @main
 struct StocksAPIExec {
     
-    static let stocksAPI = StocksAPI()
+    static let stocksAPI = KISStocksAPI()
     
     static func main() async {
         do {
