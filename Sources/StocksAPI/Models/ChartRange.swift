@@ -8,13 +8,11 @@
 import Foundation
 
 public enum ChartRange: String, CaseIterable {
-    case oneDay = "1d"
-    case oneWeek = "5d"
-    case oneMonth = "1mo"
-    case threeMonth = "3mo"
+    case oneDay = "Day"
+    case oneWeek = "Week"
+    case oneMonth = "Month"
     case ytd
-    case oneYear = "1y"
-    case fiveYear = "5y"
+    case oneYear = "Year"
     case max
     
     public var interval: String {
@@ -22,8 +20,7 @@ public enum ChartRange: String, CaseIterable {
         case .oneDay: return "1m"
         case .oneWeek: return "5m"
         case .oneMonth: return "90m"
-        case .threeMonth, .ytd, .oneYear: return "1d"
-        case .fiveYear: return "1wk"
+        case .ytd, .oneYear: return "1d"
         case .max: return "3mo"
         }
     }
