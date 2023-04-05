@@ -85,6 +85,20 @@ public struct KISStocksAPI: IStocksAPI {
             throw APIError.httpStatusCodeFailed(statusCode: statusCode, error: error)
         }
         return resp.data ?? []
+        
+        let postsTask = URLSession.shared.dataTask(with: postsURL) { data, response, error in
+                    guard let data = data else { return }
+                    do {
+                        let decoder = JSONDecoder()
+                        let posts = try decoder.decode([Post].self, from: data)
+                        DispatchQueue.main.async {
+                            self.posts = posts
+                        }
+                    } catch let error {
+                        print(error)
+                    }
+                }
+                postsTask.resume()
     }
         
         public func fetchQuotes(symbols: String) async throws -> [Quote] {
