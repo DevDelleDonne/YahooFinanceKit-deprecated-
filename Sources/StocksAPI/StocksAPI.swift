@@ -110,7 +110,6 @@ public struct KISStocksAPI: IStocksAPI {
                 URLQueryItem(name: "region", value: region)
                 
             ]
-            print(urlComp.url)
             return urlComp.url
         }
         
