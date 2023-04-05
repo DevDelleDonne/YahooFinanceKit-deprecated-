@@ -15,9 +15,11 @@ struct StocksAPIExec {
     
     static func main() async {
         do {
-            let quotes = try await stocksAPI.fetchQuotes(symbols: "APPL,MSFT,GOOG,TSLA")
-            print(quotes)
+//            let quotes = try await stocksAPI.fetchQuotes(symbols: "APPL,MSFT,GOOG,TSLA")
+//            print(quotes)
             
+            let times = try await stocksAPI.fetchMarketTime(region: "IT")
+            print(times)
 //            let tickers = try await stocksAPI.searchTickers(query: "BTC-USD")
 //            print(tickers)
 //            if let chart = try await stocksAPI.fetchChartData(symbol: "AAPL", range: .oneDay) {

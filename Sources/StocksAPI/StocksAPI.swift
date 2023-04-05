@@ -77,6 +77,15 @@ public struct KISStocksAPI: IStocksAPI {
             ]
             return urlComp.url
         }
+    
+    public func fetchMarketTime(region: String) async throws -> [Time] {
+        guard let url = urlForMarketTime(region: region) else { throw APIError.invalidURL }
+        let (resp, statusCode): (TimeResponse, Int) = try await fetch(url: url)
+        if let error = resp.error {
+            throw APIError.httpStatusCodeFailed(statusCode: statusCode, error: error)
+        }
+        return resp.data ?? []
+    }
         
         public func fetchQuotes(symbols: String) async throws -> [Quote] {
             guard let url = urlForFetchQuotes(symbols: symbols) else { throw APIError.invalidURL }
@@ -90,6 +99,19 @@ public struct KISStocksAPI: IStocksAPI {
         public func fetchQuotesRawData(symbols: String) async throws -> (Data, URLResponse) {
             guard let url = urlForFetchQuotes(symbols: symbols) else { throw APIError.invalidURL }
             return try await session.data(from: url)
+        }
+    
+        private func urlForMarketTime(region: String) -> URL? {
+            guard var urlComp = URLComponents(string: "https://it.finance.yahoo.com/_finance_doubledown/api/resource/finance.market-time") else {
+                return nil
+            }
+            urlComp.queryItems = [
+                URLQueryItem(name: "returnMeta", value: "true"),
+                URLQueryItem(name: "region", value: region)
+                
+            ]
+            print(urlComp.url)
+            return urlComp.url
         }
         
         private func urlForFetchQuotes(symbols: String) -> URL? {
